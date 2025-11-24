@@ -103,32 +103,51 @@
     </div>
    </div>
    <footer class="footer">
-     <p class="footer-text" id="footer-text">© 2024 スマート農業テクノロジー - 未来の農業を創造する</p>
+     <p class="footer-text" id="footer-text">© 2025 スマート農業テクノロジー - 未来の農業を創造する</p>
    </footer>
   </div>
 
   <!-- 読み上げスクリプト -->
-  <script>
-    function speakText(text) {
-      if (!window.speechSynthesis) {
-        alert("このブラウザでは読み上げに対応していません");
-        return;
-      }
-      window.speechSynthesis.cancel(); // 前の読み上げを停止
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ja-JP';
-      utterance.rate = 1;
-      utterance.pitch = 1;
-      window.speechSynthesis.speak(utterance);
-    }
+　<script>
+  　let currentCard = null; // 現在読み上げ中のカード
 
-    // content-cardクリック時に読み上げ
-    document.querySelectorAll('.content-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const text = card.dataset.speak || card.querySelector('.card-description').textContent;
-        speakText(text);
-      });
-    });
-  </script>
+  　function speakText(card, text) {
+    　if (!window.speechSynthesis) {
+      　alert("このブラウザでは読み上げに対応していません");
+      　return;
+    　}
+
+    　// 同じカードをクリックした場合は停止
+    　if (currentCard === card) {
+      　window.speechSynthesis.cancel();
+      　currentCard = null;
+      　return;
+    　}
+
+    　// 別のカードをクリックした場合は前の読み上げを停止して新しいカードを読み上げ
+    　window.speechSynthesis.cancel();
+    　currentCard = card;
+
+    　const utterance = new SpeechSynthesisUtterance(text);
+    　utterance.lang = 'ja-JP';
+    　utterance.rate = 1;
+    　utterance.pitch = 1;
+
+    　// 読み上げ完了後に currentCard をリセット
+    　utterance.onend = () => {
+      　currentCard = null;
+    　};
+　
+    　window.speechSynthesis.speak(utterance);
+  　}
+  　// content-cardクリック時
+  　document.querySelectorAll('.content-card').forEach(card => {
+    　card.addEventListener('click', () => {
+      　const text = card.dataset.speak || card.querySelector('.card-description').textContent;
+      　speakText(card, text);
+    　});
+  　});
+　</script>
  </body>
 </html>
+
