@@ -13,15 +13,9 @@
       font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
       overflow-x: hidden;
     }
-    
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    .page-wrapper {
-      width: 100%;
-      min-height: 100%;
-    }
+    .page-wrapper { width: 100%; min-height: 100%; }
 
     .hero-section {
       width: 100%;
@@ -31,32 +25,12 @@
       color: white;
     }
 
-    .hero-title {
-      font-size: 48px;
-      font-weight: bold;
-      margin: 0 0 20px 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
+    .hero-title { font-size: 48px; font-weight: bold; margin: 0 0 20px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .hero-subtitle { font-size: 24px; margin: 0; opacity: 0.95; }
 
-    .hero-subtitle {
-      font-size: 24px;
-      margin: 0;
-      opacity: 0.95;
-    }
+    .main-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
-    .main-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-bottom: 60px;
-    }
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; }
 
     .content-card {
       background: white;
@@ -64,55 +38,17 @@
       padding: 30px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
+    .content-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
 
-    .content-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    }
+    .card-icon { font-size: 64px; margin-bottom: 20px; display: block; }
+    .card-title { font-size: 28px; font-weight: bold; margin: 0 0 16px 0; color: #667eea; }
+    .card-description { font-size: 16px; line-height: 1.8; color: #333; margin: 0; }
 
-    .card-icon {
-      font-size: 64px;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .card-title {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 0 0 16px 0;
-      color: #667eea;
-    }
-
-    .card-description {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #333;
-      margin: 0;
-    }
-
-    .links-section {
-      background: #f8f9fa;
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .links-title {
-      font-size: 32px;
-      font-weight: bold;
-      margin: 0 0 30px 0;
-      color: #333;
-    }
-
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
+    .links-section { background: #f8f9fa; border-radius: 16px; padding: 40px; text-align: center; }
+    .links-title { font-size: 32px; font-weight: bold; margin: 0 0 30px 0; color: #333; }
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
     .link-button {
       display: inline-block;
       background: #667eea;
@@ -124,48 +60,18 @@
       font-weight: 600;
       transition: background 0.3s ease, transform 0.2s ease;
     }
+    .link-button:hover { background: #5568d3; transform: scale(1.05); }
 
-    .link-button:hover {
-      background: #5568d3;
-      transform: scale(1.05);
-    }
-
-    .footer {
-      width: 100%;
-      background: #2d3748;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-
-    .footer-text {
-      font-size: 16px;
-      margin: 0;
-      opacity: 0.9;
-    }
+    .footer { width: 100%; background: #2d3748; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
+    .footer-text { font-size: 16px; margin: 0; opacity: 0.9; }
 
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 36px;
-      }
-
-      .hero-subtitle {
-        font-size: 18px;
-      }
-
-      .card-title {
-        font-size: 24px;
-      }
-
-      .links-title {
-        font-size: 28px;
-      }
+      .hero-title { font-size: 36px; }
+      .hero-subtitle { font-size: 18px; }
+      .card-title { font-size: 24px; }
+      .links-title { font-size: 28px; }
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body>
   <div class="page-wrapper">
@@ -175,197 +81,54 @@
    </section>
    <div class="main-container">
     <div class="content-grid">
-     <div class="content-card"><span class="card-icon">🥬</span>
-      <h2 class="card-title" id="cabbage-title">高品質キャベツ栽培</h2>
-      <p class="card-description" id="cabbage-description">厳選された種子と最適な栽培環境により、栄養価が高く新鮮なキャベツを生産しています。土壌管理から収穫まで、一貫した品質管理を実施し、安全で美味しい野菜をお届けします。</p>
-     </div>
-     <div class="content-card"><span class="card-icon">🚁</span>
-      <h2 class="card-title" id="drone-title">農業用ドローン技術</h2>
-      <p class="card-description" id="drone-description">最新の農業用ドローンを活用し、広大な農地の監視、作物の健康状態チェック、精密な農薬散布を実現。AIによる画像解析で病害虫の早期発見が可能となり、効率的で環境に優しい農業を推進しています。</p>
-     </div>
+      <div class="content-card" data-speak="厳選された種子と最適な栽培環境により、栄養価が高く新鮮なキャベツを生産しています。土壌管理から収穫まで、一貫した品質管理を実施し、安全で美味しい野菜をお届けします。">
+        <span class="card-icon">🥬</span>
+        <h2 class="card-title" id="cabbage-title">高品質キャベツ栽培</h2>
+        <p class="card-description" id="cabbage-description">厳選された種子と最適な栽培環境により、栄養価が高く新鮮なキャベツを生産しています。土壌管理から収穫まで、一貫した品質管理を実施し、安全で美味しい野菜をお届けします。</p>
+      </div>
+      <div class="content-card" data-speak="最新の農業用ドローンを活用し、広大な農地の監視、作物の健康状態チェック、精密な農薬散布を実現。AIによる画像解析で病害虫の早期発見が可能となり、効率的で環境に優しい農業を推進しています。">
+        <span class="card-icon">🚁</span>
+        <h2 class="card-title" id="drone-title">農業用ドローン技術</h2>
+        <p class="card-description" id="drone-description">最新の農業用ドローンを活用し、広大な農地の監視、作物の健康状態チェック、精密な農薬散布を実現。AIによる画像解析で病害虫の早期発見が可能となり、効率的で環境に優しい農業を推進しています。</p>
+      </div>
     </div>
+
     <div class="links-section">
-     <h2 class="links-title">関連リンク</h2>
-     <div class="links-grid"><a href="https://www.maff.go.jp/j/kanbo/smart/" target="_blank" rel="noopener noreferrer" class="link-button"> 農林水産省 スマート農業 </a> <a href="https://smartagri-jp.com/" target="_blank" rel="noopener noreferrer" class="link-button"> スマート農業情報 </a> <a href="https://www.naro.go.jp/" target="_blank" rel="noopener noreferrer" class="link-button"> 農研機構 </a>
-     </div>
+      <h2 class="links-title">関連リンク</h2>
+      <div class="links-grid">
+        <a href="https://www.maff.go.jp/j/kanbo/smart/" target="_blank" class="link-button">農林水産省 スマート農業</a>
+        <a href="https://smartagri-jp.com/" target="_blank" class="link-button">スマート農業情報</a>
+        <a href="https://www.naro.go.jp/" target="_blank" class="link-button">農研機構</a>
+      </div>
     </div>
    </div>
    <footer class="footer">
-    <p class="footer-text" id="footer-text">© 2024 スマート農業テクノロジー - 未来の農業を創造する</p>
+     <p class="footer-text" id="footer-text">© 2024 スマート農業テクノロジー - 未来の農業を創造する</p>
    </footer>
   </div>
+
+  <!-- 読み上げスクリプト -->
   <script>
-    const defaultConfig = {
-      main_title: "スマート農業の未来へ",
-      subtitle: "テクノロジーで実現する持続可能な農業",
-      cabbage_title: "高品質キャベツ栽培",
-      cabbage_description: "厳選された種子と最適な栽培環境により、栄養価が高く新鮮なキャベツを生産しています。土壌管理から収穫まで、一貫した品質管理を実施し、安全で美味しい野菜をお届けします。",
-      drone_title: "農業用ドローン技術",
-      drone_description: "最新の農業用ドローンを活用し、広大な農地の監視、作物の健康状態チェック、精密な農薬散布を実現。AIによる画像解析で病害虫の早期発見が可能となり、効率的で環境に優しい農業を推進しています。",
-      footer_text: "© 2024 スマート農業テクノロジー - 未来の農業を創造する",
-      background_color: "#667eea",
-      surface_color: "#ffffff",
-      text_color: "#333333",
-      primary_action_color: "#667eea",
-      secondary_action_color: "#764ba2",
-      font_family: "Hiragino Sans",
-      font_size: 16
-    };
-
-    async function onConfigChange(config) {
-      const baseFontFamily = config.font_family || defaultConfig.font_family;
-      const fontStack = `${baseFontFamily}, 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif`;
-      const baseSize = config.font_size || defaultConfig.font_size;
-      
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-
-      document.body.style.fontFamily = fontStack;
-      
-      const heroSection = document.querySelector('.hero-section');
-      heroSection.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
-      
-      const contentCards = document.querySelectorAll('.content-card');
-      contentCards.forEach(card => {
-        card.style.backgroundColor = surfaceColor;
-      });
-      
-      const cardTitles = document.querySelectorAll('.card-title');
-      cardTitles.forEach(title => {
-        title.style.color = primaryColor;
-      });
-      
-      const cardDescriptions = document.querySelectorAll('.card-description');
-      cardDescriptions.forEach(desc => {
-        desc.style.color = textColor;
-      });
-      
-      const linkButtons = document.querySelectorAll('.link-button');
-      linkButtons.forEach(button => {
-        button.style.backgroundColor = primaryColor;
-      });
-
-      const mainTitle = document.getElementById('main-title');
-      mainTitle.textContent = config.main_title || defaultConfig.main_title;
-      mainTitle.style.fontSize = `${baseSize * 3}px`;
-      mainTitle.style.fontFamily = fontStack;
-
-      const subtitle = document.getElementById('subtitle');
-      subtitle.textContent = config.subtitle || defaultConfig.subtitle;
-      subtitle.style.fontSize = `${baseSize * 1.5}px`;
-      subtitle.style.fontFamily = fontStack;
-
-      const cabbageTitle = document.getElementById('cabbage-title');
-      cabbageTitle.textContent = config.cabbage_title || defaultConfig.cabbage_title;
-      cabbageTitle.style.fontSize = `${baseSize * 1.75}px`;
-      cabbageTitle.style.fontFamily = fontStack;
-
-      const cabbageDescription = document.getElementById('cabbage-description');
-      cabbageDescription.textContent = config.cabbage_description || defaultConfig.cabbage_description;
-      cabbageDescription.style.fontSize = `${baseSize}px`;
-      cabbageDescription.style.fontFamily = fontStack;
-
-      const droneTitle = document.getElementById('drone-title');
-      droneTitle.textContent = config.drone_title || defaultConfig.drone_title;
-      droneTitle.style.fontSize = `${baseSize * 1.75}px`;
-      droneTitle.style.fontFamily = fontStack;
-
-      const droneDescription = document.getElementById('drone-description');
-      droneDescription.textContent = config.drone_description || defaultConfig.drone_description;
-      droneDescription.style.fontSize = `${baseSize}px`;
-      droneDescription.style.fontFamily = fontStack;
-
-      const footerText = document.getElementById('footer-text');
-      footerText.textContent = config.footer_text || defaultConfig.footer_text;
-      footerText.style.fontSize = `${baseSize}px`;
-      footerText.style.fontFamily = fontStack;
-
-      const linksTitle = document.querySelector('.links-title');
-      linksTitle.style.fontSize = `${baseSize * 2}px`;
-      linksTitle.style.fontFamily = fontStack;
-      linksTitle.style.color = textColor;
+    function speakText(text) {
+      if (!window.speechSynthesis) {
+        alert("このブラウザでは読み上げに対応していません");
+        return;
+      }
+      window.speechSynthesis.cancel(); // 前の読み上げを停止
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      window.speechSynthesis.speak(utterance);
     }
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              config.surface_color = value;
-              window.elementSdk.setConfig({ surface_color: value });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-            set: (value) => {
-              config.primary_action_color = value;
-              window.elementSdk.setConfig({ primary_action_color: value });
-            }
-          },
-          {
-            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-            set: (value) => {
-              config.secondary_action_color = value;
-              window.elementSdk.setConfig({ secondary_action_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["main_title", config.main_title || defaultConfig.main_title],
-        ["subtitle", config.subtitle || defaultConfig.subtitle],
-        ["cabbage_title", config.cabbage_title || defaultConfig.cabbage_title],
-        ["cabbage_description", config.cabbage_description || defaultConfig.cabbage_description],
-        ["drone_title", config.drone_title || defaultConfig.drone_title],
-        ["drone_description", config.drone_description || defaultConfig.drone_description],
-        ["footer_text", config.footer_text || defaultConfig.footer_text]
-      ]);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
+    // content-cardクリック時に読み上げ
+    document.querySelectorAll('.content-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const text = card.dataset.speak || card.querySelector('.card-description').textContent;
+        speakText(text);
       });
-    }
+    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a3b72ffc448aff3',t:'MTc2NDAxMzk3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
