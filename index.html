@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スマート農業テクノロジー</title>
-  <script src="/_sdk/element_sdk.js"></script>
   <style>
     body {
       box-sizing: border-box;
@@ -79,6 +78,7 @@
     <h1 class="hero-title" id="main-title">スマート農業の未来へ</h1>
     <p class="hero-subtitle" id="subtitle">テクノロジーで実現する持続可能な農業</p>
    </section>
+
    <div class="main-container">
     <div class="content-grid">
       <div class="content-card" data-speak="厳選された種子と最適な栽培環境により、栄養価が高く新鮮なキャベツを生産しています。土壌管理から収穫まで、一貫した品質管理を実施し、安全で美味しい野菜をお届けします。">
@@ -102,52 +102,53 @@
       </div>
     </div>
    </div>
+
    <footer class="footer">
      <p class="footer-text" id="footer-text">© 2025 スマート農業テクノロジー - 未来の農業を創造する</p>
    </footer>
   </div>
 
   <!-- 読み上げスクリプト -->
-　<script>
-  　let currentCard = null; // 現在読み上げ中のカード
+  <script>
+    let currentCard = null; // 現在読み上げ中のカード
 
-  　function speakText(card, text) {
-    　if (!window.speechSynthesis) {
-      　alert("このブラウザでは読み上げに対応していません");
-      　return;
-    　}
+    function speakText(card, text) {
+      if (!window.speechSynthesis) {
+        alert("このブラウザでは読み上げに対応していません");
+        return;
+      }
 
-    　// 同じカードをクリックした場合は停止
-    　if (currentCard === card) {
-      　window.speechSynthesis.cancel();
-      　currentCard = null;
-      　return;
-    　}
+      // 同じカードをクリックした場合は停止
+      if (currentCard === card) {
+        window.speechSynthesis.cancel();
+        currentCard = null;
+        return;
+      }
 
-    　// 別のカードをクリックした場合は前の読み上げを停止して新しいカードを読み上げ
-    　window.speechSynthesis.cancel();
-    　currentCard = card;
+      // 別のカードをクリックした場合は前の読み上げを停止して新しいカードを読み上げ
+      window.speechSynthesis.cancel();
+      currentCard = card;
 
-    　const utterance = new SpeechSynthesisUtterance(text);
-    　utterance.lang = 'ja-JP';
-    　utterance.rate = 1;
-    　utterance.pitch = 1;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 1;
+      utterance.pitch = 1;
 
-    　// 読み上げ完了後に currentCard をリセット
-    　utterance.onend = () => {
-      　currentCard = null;
-    　};
-　
-    　window.speechSynthesis.speak(utterance);
-  　}
-  　// content-cardクリック時
-  　document.querySelectorAll('.content-card').forEach(card => {
-    　card.addEventListener('click', () => {
-      　const text = card.dataset.speak || card.querySelector('.card-description').textContent;
-      　speakText(card, text);
-    　});
-  　});
-　</script>
+      // 読み上げ完了後に currentCard をリセット
+      utterance.onend = () => {
+        currentCard = null;
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // content-cardクリック時
+    document.querySelectorAll('.content-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const text = card.dataset.speak || card.querySelector('.card-description').textContent;
+        speakText(card, text);
+      });
+    });
+  </script>
  </body>
 </html>
-
